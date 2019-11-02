@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:55:12 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/09/18 17:55:12 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/02 15:40:26 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char cha;
-
-	if (fd <= 0)
-		return ;
-	cha = (unsigned char)c;
-	write(fd, &cha, 1);
+	write(fd, &c, 1);
 }

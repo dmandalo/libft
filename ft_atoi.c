@@ -6,34 +6,26 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:51:31 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/09/18 17:51:33 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/02 15:24:29 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_atoi(const char *s)
 {
-	int			index;
-	int			sign;
-	long long	result;
-	long long	tempo;
+	int sign;
+	int res;
+	int i;
 
-	sign = 1;
-	index = 0;
-	result = 0;
-	while (str[index] == ' ' || (str[index] >= 9 && str[index] <= 13))
-		index++;
-	if (str[index] == '-')
-		sign = -1;
-	if (str[index] == '-' || str[index] == '+')
-		index++;
-	while (str[index] >= '0' && str[index] <= '9')
-	{
-		tempo = result;
-		result = result * 10 + (str[index++] - 48);
-		if (tempo > result)
-			return (sign < 0) ? 0 : -1;
-	}
-	return (sign * (int)result);
+	res = 0;
+	i = 0;
+	while ((s[i] > 8 && s[i] < 20) || s[i] == ' ')
+		i++;
+	sign = (s[i] == '-') ? -1 : 1;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	while ((s[i] >= '0' && s[i] <= '9') && s[i] != '\0')
+		res = res * 10 + (s[i++] - '0');
+	return (res * sign);
 }

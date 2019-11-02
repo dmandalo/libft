@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:52:46 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/09/18 17:52:47 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/02 15:25:59 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *tempo;
+	size_t	i;
+	char	*str;
 
-	tempo = (unsigned char *)s;
-	while (n-- > 0)
-		*(tempo++) = 0;
+	str = s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
 }

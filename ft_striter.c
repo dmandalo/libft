@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:56:42 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/09/18 17:56:44 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/02 15:45:59 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (!f || !s)
-		return ;
-	while (*s)
-		f(s++);
+	if (s != NULL && f != NULL)
+	{
+		while (*s)
+		{
+			(*f)(s);
+			s++;
+		}
+	}
 }
