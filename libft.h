@@ -6,16 +6,20 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:51:01 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/02 15:55:37 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/05 15:04:07 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFF_SIZE 32
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
 # include <stddef.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -23,6 +27,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_arr
+{
+	int				fd;
+	char			*rest;
+	struct s_arr	*next;
+}					t_arr;
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -96,5 +107,9 @@ char				**ft_strsplit(char const *s, char c);
 int					ft_countwords(char const *str, char c);
 int					ft_cpyuntil(char **dst, char *src, char c);
 void				ft_foreach(int *tab, unsigned int length, void (*f)(int));
+t_arr				*ft_newlist(const int fd);
+char				*checkrest(char **p_n, char *rest);
+int					get_line(const int fd, char **line, char *rest);
+int					get_next_line(const int fd, char **line);
 
 #endif
