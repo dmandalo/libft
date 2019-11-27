@@ -6,7 +6,7 @@
 #    By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/18 17:59:42 by dmandalo          #+#    #+#              #
-#    Updated: 2019/09/20 21:20:00 by dmandalo         ###   ########.fr        #
+#    Updated: 2019/11/27 20:06:40 by dmandalo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,9 @@ SRC = 	ft_memset.c \
 		ft_strjoinch.c \
 		ft_strndup.c \
 		ft_countwords.c \
+		get_next_line.c \
+		ft_capitalize.c \
+		ft_wdcounter.c
 
 OBJ	= $(SRC:%.c=%.o)
 

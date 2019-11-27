@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:51:01 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/05 15:04:07 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/27 20:07:56 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ t_arr				*ft_newlist(const int fd);
 char				*checkrest(char **p_n, char *rest);
 int					get_line(const int fd, char **line, char *rest);
 int					get_next_line(const int fd, char **line);
+int					ft_wdcounter(char const *str, char c);
+char				*ft_capitalize(char *s);
 
 #endif
